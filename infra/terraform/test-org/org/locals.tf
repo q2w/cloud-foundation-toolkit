@@ -233,6 +233,9 @@ locals {
       description = "Creates one or more Google Secret Manager secrets and manages basic permissions for them"
       maintainers = local.adc_common_admins
       topics      = "gcp,kms,pubsub,terraform-module,${local.common_topics.security}"
+      lint_env = {
+        ENABLE_BPMETADATA = "1"
+      }
     },
     {
       name        = "terraform-google-address"
